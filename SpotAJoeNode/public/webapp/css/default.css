@@ -1,0 +1,235 @@
+/* 
+	colour scheme:
+	https://www.color-hex.com/color-palette/7098
+*/
+
+html, body {
+	height:100%;
+	margin: 0px;
+	padding:0px;
+	background-color: white;
+	color: rgb(123,179,255);
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 1em;
+}
+
+.pane {
+	float:left;
+	margin: 0px;
+	padding:0px;
+	height:100%;
+	overflow-y:auto;
+}
+#leftPane {
+	background-color: rgb(158,55,159);
+	width: 25%;
+	padding: 0px;
+}
+#rightPane {
+	background-color: rgb(55,56,84);
+	width: 75%;
+	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.75);
+}
+#rightPaneContent {
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#leftPaneContent {
+	margin: 15px;
+}
+
+#audioElement {
+	margin: 0px;
+	padding:0px;
+	width: 100%;
+
+}
+
+#searchInput {
+	border-color: black;
+	border-style:solid;
+	border-width:1px;
+	border-radius:6px;
+	padding-left:2px;
+	padding:5px;
+	
+}
+
+
+#searchResultsTable {
+	text-align:left;
+	padding-top: 15px;
+}
+.artistCell {
+	font-size: 2em;
+	font-weight: bold;
+	cursor:pointer;
+}
+.albumCell {
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor:pointer;
+}
+.trackCell{
+	cursor:pointer;
+	list-style-type: none;
+	padding-left: 0px;
+	margin-left: 0px;
+	margin-top:4px;
+}
+.trackOL {
+	padding-left: 0px;
+	margin-left: 0px;
+	vertical-align: text-top;
+}
+#trackColumn{
+	padding-top: 0px;
+	padding-bottom: auto;
+}
+.trackRow {
+	vertical-align: top;
+}
+table {
+	border-collapse: collapse;
+}
+
+#tagList {
+	padding: 0px;
+}
+
+#tagList > li {
+	background-color: rgb(123,179,255);
+	display:inline-block;
+	margin:4px;
+	padding:2px;
+	border-color: black;
+	border-style:solid;
+	border-width:1px;
+	border-radius:6px;
+	cursor:pointer;
+	color: rgb(55,56,84);
+	font-size: 18px;
+
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+}
+
+#tagList > li:hover {
+	border-color: white;
+	-webkit-box-shadow: 0px 0px 4px 0px rgba(255,255,255,0.75);
+	-moz-box-shadow: 0px 0px 4px 0px rgba(255,255,255,0.75);
+	box-shadow: 0px 0px 4px 0px rgba(255,255,255,0.75);
+}
+
+#playlistArtistInfo {
+	font-size: 3em;
+	font-weight: bold;
+	color: rgb(0,0,0);
+}
+
+#playlistAlbumInfo {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: rgb(0,0,0);
+}
+
+.notPlayingPlaylistTrack {
+	cursor:pointer;
+}
+
+.playingPlaylistTrack {
+	font-weight: bold;
+	cursor:pointer;
+	background-color: rgb(232,106,240);
+}
+
+.floatRightUsername {
+	float: right;
+	padding-top: 10px;
+	padding-right: 25px;
+	font-size: larger;
+	height:1em;
+}
+
+
+.playlistOrderButton {
+	width: 35%;
+	padding:0px;
+	margin: 5%;
+	margin-top: 30px;
+	max-width: 55px;
+	min-width:35px;
+}
+
+
+
+
+
+
+
+
+#playlist {
+	width: 100%;
+	background-color: rgb(73,50,103);
+  	list-style-type: none;
+	padding: 0px;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.playlistDrag {
+  width: 100%;
+  text-align: center;
+  cursor: move;
+  padding: 1px;
+}
+.playlistDrag p {
+  width: 100%;
+  color: black;
+  padding: 5px;
+  margin: 1px;
+}
+
+.playlistDrag.dragElem {
+  opacity: 0.4;
+}
+.playlistDrag.over {
+  //border: 2px dashed #000;
+  border-top: 4px solid rgb(123,179,255);
+}
+
+
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

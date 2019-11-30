@@ -1,0 +1,39 @@
+Get Tags starting with by 
+
+SELECT *
+FROM Tag
+WHERE Tag.tag LIKE 'A%';
+
+
+
+Get artist stack by artistId
+
+SELECT Artist.name AS artistName, Album.name AS albumName, Track.name AS trackName
+FROM Artist
+INNER JOIN Album ON Album.artistId=Artist.id
+INNER JOIN Track ON Track.albumId=Album.id
+WHERE Artist.id=1;
+
+
+Search for artist by tag id:
+
+SELECT Artist.name
+FROM Artist
+INNER JOIN ArtistTagJoin ON Artist.id=ArtistTagJoin.ArtistId
+WHERE ArtistTagJoin.TagId=*TAGID*;
+
+
+Search for artist by tag text:
+
+SELECT Artist.name
+FROM Artist
+INNER JOIN ArtistTagJoin ON Artist.id=ArtistTagJoin.ArtistId
+INNER JOIN Tag ON ArtistTagJoin.tagId=Tag.id
+WHERE Tag.tag='*TAGTEXT*';
+
+
+Get tracks for album:
+
+SELECT Track.name
+FROM Track
+WHERE Track.albumId=3;

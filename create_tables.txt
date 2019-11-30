@@ -1,0 +1,63 @@
+CREATE TABLE IF NOT EXISTS Artist(
+    name VARCHAR(255) NOT NULL DEFAULT 'Unknown Artist',
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS Album(
+    name VARCHAR(255) NOT NULL DEFAULT 'Unknown Album',
+    artistId INT NOT NULL DEFAULT -1,
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS Track(
+    name VARCHAR(255) NOT NULL DEFAULT 'Unknown Track',
+    file VARCHAR(255) NOT NULL DEFAULT '',
+    fileType CHAR(4),
+    trackNumber INT,
+    albumId INT NOT NULL DEFAULT -1,
+    artistId INT NOT NULL DEFAULT -1,
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS Tag(
+    tag VARCHAR(255) NOT NULL DEFAULT '',
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS ArtistTagJoin(
+    artistId INT NOT NULL,
+    tagId INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+
+
+
+
+CREATE TABLE IF NOT EXISTS AlbumTagJoin(
+    albumId INT NOT NULL,
+    tagId INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS TrackTagJoin(
+    trackId INT NOT NULL,
+    tagId INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id)
+);
+
+
+
+
+LOAD DATA LOCAL INFILE '/home/pi/artistTable.txt' INTO TABLE Artist;
+LOAD DATA LOCAL INFILE '/home/pi/albumTable.txt' INTO TABLE Album;
+LOAD DATA LOCAL INFILE '/home/pi/trackTable.txt' INTO TABLE Track FIELDS ESCAPED BY "";
+LOAD DATA LOCAL INFILE '/home/pi/tagTable.txt' INTO TABLE Tag;
+LOAD DATA LOCAL INFILE '/home/pi/artistTagJoinTable.txt' INTO TABLE ArtistTagJoin;
+
+
+
+LOAD DATA LOCAL INFILE '/home/pi/albumTagJoinTable.txt' INTO TABLE AlbumTagJoin;
+LOAD DATA LOCAL INFILE '/home/pi/trackTagJoinTable.txt' INTO TABLE TrackTagJoin;
+

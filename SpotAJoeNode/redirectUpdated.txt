@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <p>Please follow <a href="http://94.6.171.107:8080/">this link</a> for spot-a-joe. It should be pointing at my Raspberry Pi unless it is down, for example if I have moved house, my router is having a moment, etc.</p>
+    <p>If you are a guest, then log in with username <b>guest</b> and password <b>flying-pig</b>. You will only be able to hear a placeholder track.</p>
+</body>
+</html>
